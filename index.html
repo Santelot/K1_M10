@@ -1,0 +1,513 @@
+<<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            padding: 20px;
+        }
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .banner {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        .banner .title {
+            font-size: 1.2em;
+            display: flex;
+            justify-content: space-between;
+        }
+        .banner .subtitle {
+            font-size: 1em;
+            margin-top: 5px;
+            border-top: 1px solid white;
+            padding-top: 5px;
+        }
+        .content {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+        .step-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+        .dialogue {
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px 0;
+            text-align: right;
+            font-style: italic;
+        }
+        .dropdown {
+            margin-bottom: 20px;
+        }
+        .dropdown select {
+            font-size: 1em;
+            padding: 5px;
+            margin-left: 10px;
+        }
+        table { width: 100%; border-collapse: collapse; }
+        td { padding: 8px; border: 1px solid #ddd; vertical-align: top; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Playbook - K1 - M10</h1>
+
+        <div class="dropdown">
+            <label for="class-time">Tiempo efectivo de Clase:</label>
+            <select id="class-time" onchange="updateContent()">
+                <option value="50">50 minutos</option>
+                <option value="40">40 minutos</option>
+                <option value="30">30 minutos</option>
+            </select>
+        </div>
+
+        <div class="dropdown">
+            <label for="class-level">Nivel:</label>
+            <select id="class-level" onchange="updateContent()">
+                <option value="K1">K1</option>
+                <option value="K2">K2</option>
+                <option value="K3">K3</option>
+            </select>
+        </div>
+
+        <h2 id="selected-time" class="time-title">Tiempo efectivo de clase: 50 minutos</h2>
+        <h2 id="selected-level" class="level-title">Nivel: K1</h2>
+
+        <!-- ............................................Aquí empezarán las actividades........................................... -->
+
+<!-- Actividad 0 -->
+<div id="activity-0" class="activity">
+    <div class="banner" onclick="toggleContent('revision_materiales')">
+        <div class="title">📚 Actividad 0: Revisión de Materiales ⏰ Tiempo: N/A</div>
+        <div class="subtitle">Asegúrate de tener listos todos los materiales indicados en la DIAPOSITIVA 1 antes de iniciar la misión.</div>
+    </div>
+    <div id="revision_materiales" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (N/A):</strong> Asegúrate de tener listos todos los materiales indicados en la Diapositiva 1 antes de iniciar la misión.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> N/A</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 1 -->
+<div id="activity-1" class="activity">
+    <div class="banner" onclick="toggleContent('bienvenida')">
+        <div class="title">🎉 Actividad 1: Bienvenida e Introducción ⏰ Tiempo: 1 minuto</div>
+        <div class="subtitle">Dar la bienvenida a los niños, presentar el enfoque del día y preparar sus mentes para la actividad.</div>
+    </div>
+    <div id="bienvenida" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (0.5 minutos):</strong> Reproduce la Diapositiva 2 “Bienvenida” y saluda a los niños mientras muestras el logo de Gnius Club. Luego introduce el tema del día y la necesidad de entrenar el cerebro para la misión.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> ¡Hola, CODE SQUAD! Bienvenidos a nuestra misión espacial. Hoy, vamos a ayudar a preparar un cohete espacial que necesita seguir una secuencia exacta para despegar. ¡Vamos a entrenar nuestro cerebro y divertirnos aprendiendo!</td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (0.5 minutos):</strong> Reproduce la Diapositiva 3 "Gimnasio CODE SQUAD" e introduce la importancia de entrenar el cerebro antes de enfrentar el reto del día.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> Vamos a entrenar nuestros cerebros en el gimnasio del CODE SQUAD. Pondremos a prueba nuestra memoria y atención con una divertida canción. ¡Recuerden seguir las indicaciones para estar listos para despegar!</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 2 -->
+<div id="activity-2" class="activity">
+    <div class="banner" onclick="toggleContent('baile-secuenciacion')">
+        <div class="title">🎶 Actividad 2: Baile de Secuenciación ⏰ Tiempo: 2 minutos</div>
+        <div class="subtitle">Preparar a los niños para la misión con un ejercicio de secuenciación a través de un baile.</div>
+    </div>
+    <div id="baile-secuenciacion" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la Diapositiva 4 y guía a los niños para que sigan las instrucciones de la canción.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> Ahora que ya estamos listos, ¡vamos a poner nuestros cerebros en acción! Sigamos las instrucciones de la canción y no se preocupen si no lo hacen perfecto la primera vez. La práctica nos ayuda a mejorar cada día.</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 3 -->
+<div id="activity-3" class="activity">
+    <div class="banner" onclick="toggleContent('planteamiento-problema')">
+        <div class="title">🌌 Actividad 3: Planteamiento del Problema ⏰ Tiempo: 2 minutos</div>
+        <div class="subtitle">Introducir a los niños en el contexto de la misión utilizando la historia.</div>
+    </div>
+    <div id="planteamiento-problema" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (1 minuto):</strong> Reproduce la DIAPOSITIVA 5, adopta la actitud de cuenta cuentos y narra la historia.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> 
+                ¡Genios del CODE SQUAD! En una galaxia llena de aventuras, nuestros amigos Astronauta Andy, Robot Robbie y Alien Amy están emocionados por participar en la Gran Carrera Espacial. 
+                Necesitan llegar al Planeta Meteora, pero solo podrán hacerlo si activan su cohete fase por fase, siguiendo un orden específico: primero el combustible, luego la estabilización, 
+                después la propulsión y finalmente el control de aterrizaje. ¡Pero los botones del tablero de control se han desordenado y no pueden despegar!
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1 minuto):</strong> Reproduce la DIAPOSITIVA 6 y explica el reto para motivar al CODE SQUAD.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> 
+                ¡CODE SQUAD! Necesitamos que nos ayuden a ordenar las fases del cohete para poder despegar y llegar a Meteora. 
+                Usaremos un código que nos indicará en qué orden activar cada fase del cohete. Si lo hacemos bien, nuestros amigos podrán despegar y llegar a tiempo para la carrera. 
+                ¡Vamos a concentrarnos y resolver este reto juntos!
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 4 -->
+<div id="activity-4" class="activity">
+    <div class="banner" onclick="toggleContent('formacion-parejas')">
+        <div class="title">🤝 Actividad 4: Formación de Parejas ⏰ Tiempo: 3 minutos</div>
+        <div class="subtitle">Explicar la importancia del trabajo en equipo en parejas y asegurar la organización.</div>
+    </div>
+    <div id="formacion-parejas" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la DIAPOSITIVA 7 “Formación de Equipos”, explica la importancia de trabajar en equipo y junta a los niños en pares. Si el número es impar, integra un trío para asegurar que todos tengan compañeros.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> 
+                ¡CODE SQUAD! Hoy vamos a trabajar en equipos de dos, porque como dice el dicho, “Dos cabezas piensan mejor que una.” 
+                Cuando compartimos ideas, ¡hacemos magia! Imagina que cada uno de ustedes es una pieza del cohete que necesita encenderse. 
+                ¡Juntos vamos a lograr que este cohete despegue! Ahora, busquen a un compañero para formar su equipo. 
+                Si sobra alguien, no se preocupen, ¡pueden trabajar en un trío!
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1 minuto):</strong> El maestro verifica que todos los niños estén emparejados y organizados para trabajar. Reproduce la DIAPOSITIVA 8 para esta revisión.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> 
+                ¿Todos tienen a su compañero? ¡Perfecto! Ahora que están listos, recuerden que trabajar en pareja significa apoyarse mutuamente. 
+                Si alguna parte del cohete necesita un ajuste, ¡es más fácil cuando dos personas piensan juntas! Cuanto más se ayuden, más divertido será nuestro reto.
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 5 -->
+<div id="activity-5" class="activity">
+    <div class="banner" onclick="toggleContent('codigo_visual')">
+        <div class="title">🎨 Actividad 5: Reto de Codificación ⏰ Tiempo: Variable <span id="activity-5-total-time">Variable según el nivel</span></div>
+        <div class="subtitle">Introducir los retos de codificación según la edad y trabajar con bloques de colores.</div>
+    </div>
+    <div id="codigo_visual" class="content">
+        <table id="activity-5-content">
+            <!-- Contenido insertado dinámicamente por JavaScript -->
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 6 -->
+<div id="activity-6" class="activity">
+    <div class="banner" onclick="toggleContent('intercambio_construccion')">
+        <div class="title">🔄 Actividad 6: Intercambio de Códigos y Construcción ⏰ Tiempo: Variable <span id="activity-6-total-time">Variable según el nivel</span></div>
+        <div class="subtitle">Intercambio de códigos entre equipos y práctica de secuenciación con bloques.</div>
+    </div>
+    <div id="intercambio_construccion" class="content">
+        <table id="activity-6-content">
+            <!-- Contenido insertado dinámicamente por JavaScript -->
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 7 -->
+<div id="activity-7" class="activity">
+    <div class="banner" onclick="toggleContent('obstaculo_historia')">
+        <div class="title">⚠️ Actividad 7: Mensaje del Cuartel ⏰ Tiempo: Variable <span id="activity-7-total-time">Variable según el nivel</span></div>
+        <div class="subtitle">Introducir un obstáculo en la narrativa para mantener el interés y la motivación.</div>
+    </div>
+    <div id="obstaculo_historia" class="content">
+        <table id="activity-7-content">
+            <!-- Contenido insertado dinámicamente por JavaScript -->
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 8 -->
+<div id="activity-8" class="activity">
+    <div class="banner" onclick="toggleContent('conclusion_reflexion')">
+        <div class="title">🏁 Actividad 8: Conclusión de la Historia y Reflexión ⏰ Tiempo: 5 minutos</div>
+        <div class="subtitle">Cierre de la misión y reflexión sobre lo aprendido durante la clase.</div>
+    </div>
+    <div id="conclusion_reflexion" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (5 minutos):</strong> Reproduce la DIAPOSITIVA 27, cuenta el desenlace de la historia, y guía la reflexión con preguntas abiertas.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> 
+                    ¡Genios del CODE SQUAD! ¡Felicidades por su gran esfuerzo! Gracias a su habilidad para organizar las fases y su trabajo en equipo, nuestros amigos Andy, Robbie y Amy lograron despegar su cohete y llegaron al Planeta Meteora justo a tiempo. ¡Qué aventura tan emocionante! 
+                    Alien Amy está feliz, Robot Robbie ha aprendido algo nuevo sobre propulsión, y Astronauta Andy no puede esperar para participar en la siguiente carrera.
+
+                    Ahora, reflexionemos sobre lo que aprendimos:
+                    <ul>
+                        <li>¿Por qué fue importante seguir la secuencia de las fases en el orden correcto?</li>
+                        <li>¿Qué hicimos cuando la lluvia de meteoritos desordenó las fases?</li>
+                        <li>¿Cómo les ayudó trabajar en parejas para resolver el reto?</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+
+               <!-- ............................................Aquí terminarán las actividades........................................... -->
+
+    </div>
+
+<script>
+    function toggleContent(id) {
+        var content = document.getElementById(id);
+        if (content.style.display === "block") {
+            content.style.display = "none";
+            } else {
+            content.style.display = "block";
+        }
+    }
+
+    function updateContent() {
+        var time = document.getElementById("class-time").value;
+        var level = document.getElementById("class-level").value;
+        document.getElementById("selected-time").innerText = "Tiempo efectivo de clase: " + time + " minutos";
+        document.getElementById("selected-level").innerText = "Nivel: " + level;
+
+        var steps = {
+    "K1": {
+        "5.1": [
+            {
+                "step": 1,
+                "time": { "30": 1, "40": 1, "50": 1 },
+                "accion": "Reproduce la DIAPOSITIVA 8, explica el problema del tablero desordenado y la necesidad de crear un código con bloques para que el cohete pueda despegar.",
+                "dialogo": "¡CODE SQUAD! Astronauta Andy y sus amigos están en un gran problema. Los botones del tablero se desordenaron justo antes de despegar hacia el planeta Meteora. Necesitan nuestra ayuda para que el cohete se encienda en el orden correcto. Vamos a crear un código usando bloques para representar las fases del cohete. Yo usaré dos bloques para cada fase, como dos bloques azules para el combustible. ¿Qué colores usarán ustedes?"
+            },
+            {
+                "step": 2,
+                "time": { "30": 2, "40": 2, "50": 2 },
+                "accion": "Reproduce la DIAPOSITIVA 9, distribuye papel y colores, y organiza a los niños en parejas.",
+                "dialogo": "Aquí tienen su papel y colores, CODE SQUAD. En sus hojas, van a dibujar las fases del cohete y asignarles dos bloques a cada fase. Prepárense para crear un código perfecto. ¡A codificar!"
+            },
+            {
+                "step": 3,
+                "time": { "30": 5, "40": 10, "50": 10 },
+                "accion": "Reproduce la DIAPOSITIVA 10 y supervisa la creación del código en papel.",
+                "dialogo": "¡Vamos, CODE SQUAD! Dibujen las fases del cohete y coloquen dos bloques para cada una. ¿Están listos para ver si nuestro cohete despega? ¡Lo están haciendo genial!"
+            }
+        ],
+        "6": [
+            {
+                "step": 1,
+                "time": { "30": 2, "40": 2, "50": 2 },
+                "accion": "Reproduce la DIAPOSITIVA 15 y organiza el intercambio de códigos entre los equipos.",
+                "dialogo": "¡Excelente trabajo, CODE SQUAD! Ahora vamos a compartir nuestros códigos con otro equipo. Cambien sus hojas de código y preparen sus bloques para seguir el nuevo código. ¡Vamos a ver si estos cohetes despegan!"
+            },
+            {
+                "step": 2,
+                "time": { "30": 7, "40": 10, "50": 10 },
+                "accion": "Reproduce la DIAPOSITIVA 16, entrega los códigos y motiva a los equipos a construir.",
+                "dialogo": "¡CODE SQUAD, es hora de poner en marcha los cohetes! Sigan los códigos que recibieron y construyan cada fase con dos bloques. Recuerden que necesitamos combustible, estabilización, propulsión y control de aterrizaje. ¡Adelante, ustedes pueden!"
+            }
+        ],
+        "7": [
+            {
+                "step": 1,
+                "time": { "30": 3, "40": 4, "50": 5 },
+                "accion": "Reproduce la DIAPOSITIVA 21, cuenta el obstáculo que se encontraron y la urgencia de resolverlo.",
+                "dialogo": "¡CODE SQUAD! ¡Atención! Justo cuando pensábamos que todo estaba listo, una lluvia de meteoritos ha golpeado el tablero de control. Ahora, las fases del cohete están desordenadas otra vez. Pero no se preocupen, el cuartel general nos ha enviado un nuevo código. ¡Vamos a organizarnos y solucionarlo juntos!"
+            },
+            {
+                "step": 2,
+                "time": { "30": 7, "40": 10, "50": 10 },
+                "accion": "Reproduce la DIAPOSITIVA 22, entrega los nuevos códigos y motiva a los niños a seguirlos para resolver el problema.",
+                "dialogo": "¡Vamos CODE SQUAD! Sigamos el nuevo código enviado por el cuartel general. Usen dos bloques para cada fase y asegúrense de que todo esté en orden para que el cohete pueda despegar. ¡Vamos a trabajar en equipo!"
+            }
+        ]
+    },
+   "K2": {
+        "5.2": [
+            {
+                "step": 1,
+                "time": { "30": 1, "40": 1, "50": 1 },
+                "accion": "Reproduce la DIAPOSITIVA 11 y explica el reto del tablero desordenado.",
+                "dialogo": "¡CODE SQUAD! Andy, Robbie y Amy están listos, pero su tablero sigue desordenado. Necesitamos su ayuda para arreglarlo usando bloques. Yo usaré tres bloques para cada fase. ¿Qué colores usarán ustedes?"
+            },
+            {
+                "step": 2,
+                "time": { "30": 2, "40": 2, "50": 2 },
+                "accion": "Reproduce la DIAPOSITIVA 12 y entrega materiales a los equipos.",
+                "dialogo": "Aquí están sus hojas, CODE SQUAD. Dibujen las fases y usen tres bloques para cada una. ¡Listos para despegar!"
+            },
+            {
+                "step": 3,
+                "time": { "30": 5, "40": 10, "50": 10 },
+                "accion": "Supervisa y apoya durante la creación del código.",
+                "dialogo": "Recuerden, tres bloques para cada fase. ¡Vamos a lograrlo!"
+            }
+        ],
+        "6": [
+            {
+                "step": 1,
+                "time": { "30": 2, "40": 2, "50": 2 },
+                "accion": "Reproduce la DIAPOSITIVA 17 y organiza el intercambio.",
+                "dialogo": "¡Muy bien, CODE SQUAD! Ahora cambien los códigos con otro equipo y preparen sus bloques para construir las fases. ¡Vamos a ver cómo funciona este intercambio!"
+            },
+            {
+                "step": 2,
+                "time": { "30": 7, "40": 10, "50": 10 },
+                "accion": "Reproduce la DIAPOSITIVA 18 y entrega los códigos.",
+                "dialogo": "¡Vamos CODE SQUAD! Construyan cada fase usando tres bloques y sigan el código que tienen. Recuerden que necesitamos cada fase en su orden correcto para que el cohete pueda despegar. ¡Hagámoslo juntos!"
+            }
+        ],
+        "7": [
+            {
+                "step": 1,
+                "time": { "30": 3, "40": 4, "50": 5 },
+                "accion": "Reproduce la DIAPOSITIVA 23 y explica el obstáculo.",
+                "dialogo": "¡CODE SQUAD! Tenemos una emergencia. Una lluvia de meteoritos ha causado problemas en el tablero de control, desordenando las fases del cohete. El cuartel general nos ha enviado un nuevo código que debemos seguir para reorganizar todo y despegar a tiempo. ¡Nos toca a nosotros!"
+            },
+            {
+                "step": 2,
+                "time": { "30": 7, "40": 10, "50": 10 },
+                "accion": "Reproduce la DIAPOSITIVA 24 y entrega los nuevos códigos.",
+                "dialogo": "¡Vamos CODE SQUAD! Sigamos el nuevo código que nos ha enviado el cuartel. Utilicen tres bloques para cada fase del cohete y asegúrense de que todo esté listo para el despegue. ¡Ustedes pueden hacerlo!"
+            }
+        ]
+},
+    "K3": {
+        "5.3": [
+            {
+                "step": 1,
+                "time": { "30": 1, "40": 1, "50": 1 },
+                "accion": "Reproduce la DIAPOSITIVA 13 y explica el reto del tablero desordenado para el grupo mayor.",
+                "dialogo": "¡CODE SQUAD! Esta vez tenemos cinco fases que organizar, y cada una necesita tres bloques. ¿Listos para mostrar lo que pueden hacer?"
+            },
+            {
+                "step": 2,
+                "time": { "30": 2, "40": 2, "50": 2 },
+                "accion": "Reproduce la DIAPOSITIVA 14 y distribuye materiales al equipo mayor.",
+                "dialogo": "¡CODE SQUAD! Dibujen las fases y asignen tres bloques a cada una. Este equipo tiene el reto más difícil. ¡Vamos a lograrlo juntos!"
+            },
+            {
+                "step": 3,
+                "time": { "30": 5, "40": 10, "50": 10 },
+                "accion": "Supervisa la creación del código para el equipo mayor.",
+                "dialogo": "¡Están haciendo un trabajo espectacular! Asegúrense de que cada fase tenga tres bloques y que todo esté en el orden correcto para despegar. ¡Vamos!"
+            }
+        ],
+        "6": [
+            {
+                "step": 1,
+                "time": { "30": 2, "40": 2, "50": 2 },
+                "accion": "Reproduce la DIAPOSITIVA 19 y organiza el intercambio de códigos.",
+                "dialogo": "¡Gran trabajo, CODE SQUAD! Cambien sus códigos con otro equipo y preparen sus bloques. ¡Es el momento de organizar las cinco fases del cohete!"
+            },
+            {
+                "step": 2,
+                "time": { "30": 7, "40": 10, "50": 10 },
+                "accion": "Reproduce la DIAPOSITIVA 20 y entrega los códigos.",
+                "dialogo": "¡CODE SQUAD, a trabajar! Construyan cada fase con tres bloques y asegúrense de seguir el código al pie de la letra. ¡Este cohete está listo para despegar gracias a ustedes!"
+            }
+        ],
+        "7": [
+            {
+                "step": 1,
+                "time": { "30": 3, "40": 4, "50": 5 },
+                "accion": "Reproduce la DIAPOSITIVA 25 y explica el obstáculo con un tono de urgencia.",
+                "dialogo": "¡CODE SQUAD! Una lluvia de meteoritos ha golpeado el tablero de control y ahora las fases del cohete están desordenadas. El cuartel general nos ha enviado un nuevo código para reorganizar todo y lograr el despegue. ¡Es hora de que mostremos nuestras habilidades!"
+            },
+            {
+                "step": 2,
+                "time": { "30": 7, "40": 10, "50": 10 },
+                "accion": "Reproduce la DIAPOSITIVA 26 y entrega los nuevos códigos para reorganizar las fases.",
+                "dialogo": "¡Vamos CODE SQUAD! Sigamos el nuevo código enviado desde el cuartel general. Utilicen tres bloques para cada fase del cohete, pero esta vez tenemos cinco fases por organizar. ¡Asegúrense de que el cohete esté listo para despegar!"
+            }
+        ]
+    }
+};
+
+
+
+        // Mostrar u ocultar actividades según el nivel seleccionado
+        var activities = {
+            "activity-0": true,
+            "activity-1": true,
+            "activity-2": true,
+            "activity-3": true,
+            "activity-4": true,
+            "activity-5": true,
+            "activity-6": true,
+            "activity-7": steps[level]["7"].some(s => s.time[time] > 0),
+            "activity-8": true
+        };
+
+        Object.keys(activities).forEach(function(activityId) {
+            var activityElement = document.getElementById(activityId);
+            if (activities[activityId]) {
+                activityElement.style.display = "block";
+            } else {
+                activityElement.style.display = "none";
+            }
+        });
+
+        // Renderizar los pasos dinámicamente en las tablas de actividades 5, 6 y 7
+        renderActivitySteps("activity-5-content", steps[level]["5." + (level === "K1" ? 1 : level === "K2" ? 2 : 3)], time);
+        renderActivitySteps("activity-6-content", steps[level]["6"], time);
+        renderActivitySteps("activity-7-content", steps[level]["7"], time);
+
+        document.getElementById("activity-5-total-time").innerText = calculateTotalTime(steps[level]["5." + (level === "K1" ? 1 : level === "K2" ? 2 : 3)], time) + " minutos";
+        document.getElementById("activity-6-total-time").innerText = calculateTotalTime(steps[level]["6"], time) + " minutos";
+        document.getElementById("activity-7-total-time").innerText = calculateTotalTime(steps[level]["7"], time) + " minutos";
+    }
+
+    function renderActivitySteps(contentId, steps, time) {
+        var contentContainer = document.getElementById(contentId);
+        contentContainer.innerHTML = "";
+        steps.forEach(function(step) {
+            if (step.time[time] > 0) {
+                var row = document.createElement("tr");
+                var stepCell = document.createElement("td");
+                var dialogCell = document.createElement("td");
+
+                stepCell.innerHTML = "<strong>PASO " + step.step + " (" + step.time[time] + " minutos):</strong> " + step.accion;
+                dialogCell.innerHTML = "<strong>DIÁLOGO SUGERIDO:</strong> " + step.dialogo;
+
+                row.appendChild(stepCell);
+                row.appendChild(dialogCell);
+                contentContainer.appendChild(row);
+            }
+        });
+    }
+
+    function calculateTotalTime(steps, time) {
+        return steps.reduce((total, step) => total + step.time[time], 0);
+    }
+
+    updateContent();
+</script>
+
+
+
+
+</body>
+</html>
